@@ -83,8 +83,7 @@ namespace kursovay
             {
                 Console.Write(num + " ");
             }
-
-            Console.ReadKey();
+                        Console.ReadKey();
         }
         static void RandomMassive()
         {
