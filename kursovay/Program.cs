@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,9 +33,9 @@ namespace kursovay
 
 
             // Массив для хранения входных чисел
-            int[] numbers = new int[10];
-
-            int count = 0; // Счетчик числа введенных чисел
+            //int[] numbers = new int[10];
+            List<int> numbers = new List<int>();
+            int count; // Счетчик числа введенных чисел
             string input = Console.ReadLine(); // Ввод строки чисел
 
             while (input != "")
@@ -44,17 +45,18 @@ namespace kursovay
 
                 for (int i = 0; i < numberStrings.Length; i++)
                 {
-                    numbers[count] = int.Parse(numberStrings[i]);
-                    count++;
+                    numbers.Add(int.Parse(numberStrings[i]));
+                    //numbers[count] = int.Parse(numberStrings[i]);
+                    //count++;
                 }
 
                 input = Console.ReadLine();
             }
 
-            Console.WriteLine($"Введено {count} чисел.");
-
-            Array.Sort(numbers, 0, count);
-
+            // Console.WriteLine($"Введено {count} чисел.");
+            Console.WriteLine($"Введено {numbers.Count} чисел.");
+            numbers.Sort();
+            
             Console.WriteLine("Введите числа через пробел или Enter для завершения ввода:");
 
             while (input != "")
@@ -64,16 +66,17 @@ namespace kursovay
 
                 for (int i = 0; i < numberStrings.Length; i++)
                 {
-                    numbers[count] = int.Parse(numberStrings[i]);
-                    count++;
+                    numbers.Add(int.Parse(numberStrings[i]));
+                    //numbers[numbers.Count] = int.Parse(numberStrings[i]);
+                    //count++;
                 }
 
                 input = Console.ReadLine();
             }
 
-            Console.WriteLine($"Введено {count} чисел.");
+            Console.WriteLine($"Введено {numbers.Count} чисел.");
 
-            Array.Sort(numbers, 0, count);
+            numbers.Sort();
 
             Console.WriteLine($"Отсортированные числа:");
             foreach (int num in numbers)
