@@ -83,7 +83,7 @@ namespace kursovay
             {
                 Console.Write(num + " ");
             }
-                        Console.ReadKey();
+                Console.ReadKey();
         }
         static void RandomMassive()
         {
@@ -94,17 +94,21 @@ namespace kursovay
             int[] randomArray = new int[range];
             for (int i = 0; i < range; i++)
             {
-                randomArray[i] = random.Next();
+                randomArray[i] = random.Next(1,500);
             }
-
-            Array.Sort(randomArray);
-
             Console.WriteLine($"Случайный массив:");
+            Console.WriteLine($"Выведено {range} чисел:");
             foreach (int num in randomArray)
             {
                 Console.Write(num + " ");
             }
 
+            Array.Sort(randomArray);
+            Console.WriteLine($"\nОтсортированные числа:");
+            foreach (int num in randomArray)
+            {
+                Console.Write(num + " ");
+            }
             Console.ReadKey();
         }
     }
